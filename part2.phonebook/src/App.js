@@ -3,16 +3,14 @@ import axios from 'axios'
 import phoneBook from './services/phonebook'
 const App = () => {
   const [persons, setPersons] = useState([  ])
-
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [filterName, setFilterName] = useState('')
   const [filteredPersons, setFilteredPersons] = useState('');
 
-  /*const [newPersons, setNewPersons] = useState(persons)*/
+  /*const [newPersons, setNewPersons] = useState(persons)
 
-
-  /*const handleDelete = (id) => {
+  const handleDelete = (id) => {
     console.log(id )
     const url = `http://localhost:3001/persons/${id}`
     const personDeleted =  persons.find(n => n.id === id)
@@ -21,10 +19,10 @@ const App = () => {
   return axios.delete(url + '/' + id, newPersonList).then(response => {
     setPersons(persons.filter ((p) => p.id !== persons.id ? personDeleted : response.data)) 
 
-  })}
+  })}*/
 
 
-  /*const toggleDeleteOf = (id) => {
+  const toggleDeleteOf = (id) => {
     const url = `http://localhost:3001/persons/${id}`
     const person = persons.find(n => n.id === id)
     console.log('importance of ' + id + ' needs to be toggled')
@@ -34,7 +32,7 @@ const App = () => {
   axios.put(url, deletePerson).then(response => {
     setPersons(persons.map(person => person.id !== id ? person : response.data))
   })
-  }*/
+  }
 
   useEffect(() => {
     console.log('effect')

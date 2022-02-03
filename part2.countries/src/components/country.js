@@ -1,12 +1,13 @@
 import React from 'react'
-import Weather from './components/weather'
-const Language = ({props }) => {
+import Weather from '../components/weather'
+const Language = ({props}) => {
     return (
       <div> {props.languages.map((language) => {
         return ( <li key =  {language.iso639_1}> {language.name} </li>) 
       })}  </div>
     )
   }
+  
   const Country = ({ country}) => {
     return (
       <div>

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Country from './components/country'
-
-
 function App() {
   const [countries, setCountries] = useState([]);
   const [countryFilter, setCountryFilter] = useState("");
@@ -43,6 +41,7 @@ const filteredCountries = countries.filter((country) => {
     setCountryFilter(event.target.id);
   };
     
+    
   const Countries = ({ countries,  }) => {
     const tooManyCountries = countries.length > 10;
     const multipleCountries = countries.length > 1 && countries.length <= 10;
@@ -71,7 +70,7 @@ const filteredCountries = countries.filter((country) => {
   
   return (
     <div>
-      <h1>Data For Countries</h1>
+      <h1> Country Data </h1>
       <input onChange = {handleChange} value = {countryFilter}/>
       
       {filter && !exactMatch && (
